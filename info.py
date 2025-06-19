@@ -11,8 +11,8 @@ id_pattern = re.compile(r'^.\d+$')
 SESSION = environ.get('SESSION', 'Webavbot')
 API_ID = int(environ.get('API_ID', '25928682'))
 API_HASH = environ.get('API_HASH', '65b01e4ef42f8b3a1d5fd988e5aee5c9')
-BOT_TOKEN = environ.get('BOT_TOKEN', "1587356098:AAFoXvkUzi3_O116zyr4L9R8tQ0w54joG54")
-BOT_USERNAME = environ.get("BOT_USERNAME", 'Adsh4_bot') # without @ 
+BOT_TOKEN = environ.get('BOT_TOKEN', "7590752209:AAF7DSX4jNk2dazjS9OOl3n9mW0y1HQRzC4")
+BOT_USERNAME = environ.get("BOT_USERNAME", 'Uchihashiva_bot') # without @ 
 
 # Admins, Channels & Users
 BIN_CHANNEL = int(environ.get("BIN_CHANNEL", '-1002141063405')) # admin your channel in stream 
