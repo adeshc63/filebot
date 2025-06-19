@@ -1,0 +1,15 @@
+# Sensitive information
+info.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+*.env
+
+# Virtual Environment
+venv/
+env/
