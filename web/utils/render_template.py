@@ -6,7 +6,6 @@ from web.utils.file_properties import get_file_ids
 from web.server.exceptions import InvalidHash
 import urllib.parse
 import logging
-import aiohttp
 
 #Dont Remove My Credit @AV_BOTz_UPDATE 
 #This Repo Is By @BOT_OWNER26 
@@ -32,7 +31,7 @@ async def render_page(id, secure_hash, src=None):
     else:
         template_file = "web/template/dl.html"
 
-    with open(template_file) as f:
+    with open(template_file, 'r') as f:
         template = jinja2.Template(f.read())
 
     file_name = file_data.file_name.replace("_", " ") if file_data.file_name else "File"
