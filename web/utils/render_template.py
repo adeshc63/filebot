@@ -25,20 +25,17 @@ async def render_page(id, secure_hash, src=None):
         f"{id}?hash={secure_hash}",
     )
 
-    tag = file_data.mime_type.split("/")[0].strip()
+    tag = file_data.mime_type.split("/")[0].strip() if file_data.mime_type else "document"
     file_size = get_size(file_data.file_size)
     if tag in ["video", "audio"]:
         template_file = "web/template/webav.html"
     else:
         template_file = "web/template/dl.html"
-        async with aiohttp.ClientSession() as s:
-            async with s.get(src) as u:
-                file_size = get_size(int(u.headers.get("Content-Length")))
 
     with open(template_file) as f:
         template = jinja2.Template(f.read())
 
-    file_name = file_data.file_name.replace("_", " ")
+    file_name = file_data.file_name.replace("_", " ") if file_data.file_name else "File"
 
     return template.render(
         file_name=file_name,
