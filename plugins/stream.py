@@ -54,7 +54,7 @@ async def private_receive_handler(c: Client, m: Message):
         # ✅ अगर file_name मौजूद है तो पूरा कैप्शन भेजें, वरना सिर्फ डाउनलोड लिंक भेजें
         if file_name:
             await m.reply_text(
-                text=script.CAPTION_TXT.format(CHANNEL, file_name, file_size, stream, download),
+                text=script.CAPTION_TXT.format(stream, file_name, file_size, stream, download),
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([
@@ -67,7 +67,7 @@ async def private_receive_handler(c: Client, m: Message):
             )
         else:
             await m.reply_text(
-                text=script.CAPTION2_TXT.format(CHANNEL, file_name, file_size, download),
+                text=script.CAPTION2_TXT.format(download, file_name, file_size, download),
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([
